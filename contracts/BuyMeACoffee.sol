@@ -3,6 +3,8 @@
 
 pragma solidity ^0.8.9;
 
+import "./IERC20.sol";
+
 contract BuyMeACoffee {
     event NewMemo(
         address indexed from,
