@@ -4,6 +4,8 @@
 pragma solidity ^0.8.9;
 
 import "./IERC20.sol";
+import "hardhat/console.sol";
+
 
 contract BuyMeACoffee {
     event NewMemo(
@@ -45,6 +47,11 @@ contract BuyMeACoffee {
      */
     function buyCoffee(string memory _name, string memory _message) public payable {
         require(msg.value > 0, "can't buy coffee for free!");
+
+        console.log(
+        "msg logging",
+            msg
+        );
 
         memos.push(Memo(
             msg.sender,
